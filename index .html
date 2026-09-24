@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <title>Vital Ear Plug｜耳から始めるセルフケア</title>
+
+  <meta
+    name="description"
+    content="集中したい、落ち着きたい、切り替えたい。Vital Ear Plugは、耳に装着して使うウェルネスアイテムです。"
+  >
+
+  <style>
+    :root {
+      --navy: #082a40;
+      --deep-navy: #061d2d;
+      --blue: #315e6d;
+      --pale-blue: #eaf2f2;
+      --mist: #f5f7f6;
+      --cream: #f7f3ea;
+      --gold: #a98b50;
+      --text: #263740;
+      --muted: #68777e;
+      --white: #ffffff;
+      --line: #dce5e5;
+      --max-width: 520px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: #e4ebeb;
+      font-family:
+        "Hiragino Kaku Gothic ProN",
+        "Yu Gothic",
+        "YuGothic",
+        "Noto Sans JP",
+        sans-serif;
+      font-size: 16px;
+      line-height: 1.85;
+      letter-spacing: 0.035em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    figure,
+    ul,
+    ol {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.45;
+      text-wrap: pretty;
+    }
+
+    p {
+      text-wrap: pretty;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .section {
+      padding: 68px 22px;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .section-label::before {
+      flex: 0 0 23px;
+      width: 23px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    .section-title {
+      margin-bottom: 23px;
+      color: var(--navy);
+      font-size: clamp(1.7rem, 7vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: 0.035em;
+    }
+
+    .section-lead {
+      margin-bottom: 0;
+      font-size: 0.96rem;
+      line-height: 1.95;
+    }
+
+    .small-note {
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 0.69rem;
+      line-height: 1.75;
+    }
+
+    /* Header */
+
+    .header {
+      padding:
+        calc(17px + env(safe-area-inset-top))
+        20px
+        17px;
+      color: var(--white);
+      background: var(--deep-navy);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      flex: 0 0 auto;
+      font-size: 0.93rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+    }
+
+    .header-description {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.61rem;
+      letter-spacing: 0.06em;
+      text-align: right;
+    }
+
+    /* Hero */
+
+    .hero {
+      color: var(--white);
+      background:
+        radial-gradient(
+          circle at 92% 25%,
+          rgba(77, 139, 150, 0.32),
+          transparent 32%
+        ),
+        linear-gradient(
+          150deg,
+          #071d2d 0%,
+          #0d354d 62%,
+          #295c66 100%
+        );
+    }
+
+    .hero-copy {
+      padding: 52px 22px 34px;
+    }
+
+    .hero-kicker {
+      margin-bottom: 17px;
+      color: #ddc999;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.17em;
+    }
+
+    .hero h1 {
+      margin-bottom: 22px;
+      font-size: clamp(2.25rem, 10vw, 3.15rem);
+      font-weight: 500;
+      letter-spacing: 0.025em;
+    }
+
+    .hero h1 span {
+      display: block;
+    }
+
+    .hero-message {
+      max-width: 390px;
+      margin-bottom: 18px;
+      font-size: 1.04rem;
+      font-weight: 700;
+      line-height: 1.8;
+    }
+
+    .hero-description {
+      max-width: 390px;
+      margin-bottom: 24px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.82rem;
+      line-height: 1.85;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .hero-tag {
+      padding: 6px 11px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 0.64rem;
+      white-space: nowrap;
+    }
+
+    /*
+      写真は絶対配置しない。
+      width 100%・height autoで元画像の比率を維持する。
+    */
+
+    .hero-photo {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          180deg,
+          #0d354d 0%,
+          #dce8e7 100%
+        );
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .photo-caption {
+      position: absolute;
+      right: 12px;
+      bottom: 10px;
+      margin: 0;
+      padding: 4px 8px;
+      color: rgba(255, 255, 255, 0.82);
+      background: rgba(6, 29, 45, 0.56);
+      font-size: 0.58rem;
+    }
+
+    /* Intro */
+
+    .intro {
+      background: var(--cream);
+    }
+
+    .concern-list {
+      margin: 31px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .concern-list li {
+      position: relative;
+      padding: 17px 4px 17px 39px;
+      border-bottom: 1px solid rgba(8, 42, 64, 0.13);
+      color: var(--navy);
+      font-size: 0.91rem;
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    .concern-list li:first-child {
+      border-top: 1px solid rgba(8, 42, 64, 0.13);
+    }
+
+    .concern-list li::before {
+      position: absolute;
+      top: 21px;
+      left: 7px;
+      width: 18px;
+      height: 18px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .concern-list li::after {
+      position: absolute;
+      top: 28px;
+      left: 14px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+      content: "";
+    }
+
+    .intro-message {
+      margin: 29px 0 0;
+      color: var(--navy);
+      font-size: 1.03rem;
+      font-weight: 600;
+      line-height: 1.9;
+    }
+
+    /* Why ears */
+
+    .why-ear {
+      background: var(--white);
+    }
+
+    .knowledge-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .knowledge-card {
+      padding: 25px 21px;
+      border: 1px solid var(--line);
+    }
+
+    .knowledge-heading {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 13px;
+    }
+
+    .knowledge-number {
+      flex: 0 0 auto;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 1.55rem;
+      line-height: 1;
+    }
+
+    .knowledge-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1rem;
+    }
+
+    .knowledge-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.9;
+    }
+
+    .knowledge-note {
+      margin-top: 23px;
+      padding: 17px;
+      color: var(--muted);
+      background: var(--mist);
+      font-size: 0.67rem;
+      line-height: 1.75;
+    }
+
+    /* Three states */
+
+    .states {
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .states .section-title,
+    .states .section-lead {
+      color: var(--white);
+    }
+
+    .state-list {
+      display: grid;
+      gap: 1px;
+      margin-top: 34px;
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .state-card {
+      padding: 26px 22px;
+      background: var(--navy);
+    }
+
+    .state-card h3 {
+      margin-bottom: 9px;
+      color: #dfca9a;
+      font-size: 1.16rem;
+    }
+
+    .state-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.81rem;
+      line-height: 1.85;
+    }
+
+    /* Product introduction */
+
+    .product {
+      background: var(--pale-blue);
+    }
+
+    .product-copy p {
+      margin-bottom: 18px;
+      font-size: 0.91rem;
+    }
+
+    .product-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+      margin-top: 27px;
+    }
+
+    .product-point {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid rgba(8, 42, 64, 0.14);
+      color: var(--navy);
+      background: rgba(255, 255, 255, 0.75);
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    .product-summary {
+      margin-top: 27px;
+      padding: 21px;
+      border-left: 3px solid var(--gold);
+      color: var(--navy);
+      background: var(--white);
+      font-size: 0.93rem;
+      font-weight: 600;
+      line-height: 1.9;
+    }
+
+    /* Use needs */
+
+    .needs {
+      background: var(--white);
+    }
+
+    .need-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .need-card {
+      padding: 22px 20px;
+      background: var(--mist);
+    }
+
+    .need-card h3 {
+      margin-bottom: 9px;
+      color: var(--navy);
+      font-size: 0.98rem;
+    }
+
+    .need-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.85;
+    }
+
+    /* How to wear */
+
+    .howto {
+      background: var(--cream);
+    }
+
+    .wearing-visual {
+      margin: 33px 0 0;
+    }
+
+    .product-image-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: #eef3f2;
+    }
+
+    .product-image-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .image-description {
+      margin: 0;
+      padding: 14px 16px;
+      color: var(--muted);
+      background: var(--white);
+      font-size: 0.72rem;
+      line-height: 1.7;
+    }
+
+    .wear-position {
+      margin-top: 14px;
+      padding: 21px;
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .wear-position strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #dfca9a;
+      font-size: 0.89rem;
+    }
+
+    .wear-position p {
+      margin: 0;
+      font-size: 0.78rem;
+      line-height: 1.8;
+    }
+
+    .step-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 27px;
+    }
+
+    .step {
+      padding: 24px 20px;
+      border-top: 3px solid var(--navy);
+      background: var(--white);
+    }
+
+    .step-label {
+      display: block;
+      margin-bottom: 9px;
+      color: var(--gold);
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+    }
+
+    .step h3 {
+      margin-bottom: 9px;
+      color: var(--navy);
+      font-size: 0.98rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.79rem;
+      line-height: 1.85;
+    }
+
+    .warning {
+      margin-top: 23px;
+      padding: 19px;
+      border: 1px solid #c8b17d;
+      background: #fffaf0;
+      font-size: 0.73rem;
+      line-height: 1.8;
+    }
+
+    .warning strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--navy);
+      font-size: 0.84rem;
+    }
+
+    /* Features */
+
+    .features {
+      background: var(--white);
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 11px;
+      margin-top: 33px;
+    }
+
+    .feature-card {
+      padding: 22px 20px;
+      border: 1px solid var(--line);
+    }
+
+    .feature-card h3 {
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 0.96rem;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.8;
+    }
+
+    /* Care */
+
+    .care {
+      background: var(--pale-blue);
+    }
+
+    .care-list {
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: care;
+    }
+
+    .care-list li {
+      position: relative;
+      min-height: 47px;
+      padding: 5px 0 18px 45px;
+      border-bottom: 1px solid rgba(8, 42, 64, 0.12);
+      counter-increment: care;
+      font-size: 0.81rem;
+    }
+
+    .care-list li + li {
+      padding-top: 18px;
+    }
+
+    .care-list li::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--navy);
+      content: counter(care);
+      font-size: 0.66rem;
+    }
+
+    .care-list li + li::before {
+      top: 13px;
+    }
+
+    /* Closing — left aligned, no forced line breaks */
+
+    .closing {
+      padding: 76px 22px;
+      background:
+        radial-gradient(
+          circle at 100% 100%,
+          rgba(61, 121, 130, 0.18),
+          transparent 42%
+        ),
+        var(--white);
+    }
+
+    .closing-label {
+      margin-bottom: 15px;
+      color: var(--gold);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .closing h2 {
+      max-width: 410px;
+      margin-bottom: 25px;
+      color: var(--navy);
+      font-size: clamp(1.78rem, 7.5vw, 2.25rem);
+      font-weight: 500;
+    }
+
+    .closing-text {
+      max-width: 410px;
+      margin-bottom: 17px;
+      font-size: 0.87rem;
+      line-height: 1.9;
+    }
+
+    .closing-message {
+      max-width: 410px;
+      margin: 34px 0 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--navy);
+      font-size: 1.03rem;
+      font-weight: 700;
+      line-height: 1.9;
+    }
+
+    /* Disclaimer */
+
+    .disclaimer {
+      padding: 43px 22px;
+      background: #edf2f2;
+    }
+
+    .disclaimer h2 {
+      margin-bottom: 15px;
+      color: var(--navy);
+      font-size: 0.94rem;
+    }
+
+    .disclaimer p {
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 0.67rem;
+      line-height: 1.75;
+    }
+
+    /* Footer */
+
+    .footer {
+      padding:
+        38px
+        22px
+        calc(38px + env(safe-area-inset-bottom));
+      color: rgba(255, 255, 255, 0.74);
+      background: var(--deep-navy);
+    }
+
+    .footer-info {
+      margin-bottom: 19px;
+      font-size: 0.64rem;
+      line-height: 1.95;
+    }
+
+    .copyright {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.57rem;
+    }
+
+    @media (min-width: 430px) {
+      .section,
+      .closing {
+        padding-right: 30px;
+        padding-left: 30px;
+      }
+
+      .hero-copy {
+        padding-right: 30px;
+        padding-left: 30px;
+      }
+    }
+
+    @media (min-width: 760px) {
+      body {
+        padding: 30px 0;
+      }
+
+      .page {
+        border-radius: 8px;
+        box-shadow: 0 12px 50px rgba(6, 29, 45, 0.14);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="header-inner">
+        <div class="brand">Vital Ear Plug</div>
+        <p class="header-description">耳から始めるセルフケア</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="hero-kicker">CONDITIONING FROM THE EARS</p>
+
+          <h1>
+            <span>集中したい。</span>
+            <span>落ち着きたい。</span>
+            <span>切り替えたい。</span>
+          </h1>
+
+          <p class="hero-message">
+            その時々に合った自分へ。耳から始める、新しいセルフケア。
+          </p>
+
+          <p class="hero-description">
+            Vital Ear Plugは、日々のONとOFFに取り入れる耳装着型のウェルネスアイテムです。
+          </p>
+
+          <div class="hero-tags">
+            <span class="hero-tag">電源・充電不要</span>
+            <span class="hero-tag">外音取り込み構造</span>
+            <span class="hero-tag">左右別サイズ</span>
+            <span class="hero-tag">水洗い可能</span>
+          </div>
+        </div>
+
+        <figure class="hero-photo">
+          <img
+            src="https://i.imgur.com/KLasTME.png"
+            alt="Vital Ear Plugを耳に装着した女性"
+            fetchpriority="high"
+          >
+          <figcaption class="photo-caption">
+            Vital Ear Plug 装着イメージ
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section intro">
+        <p class="section-label">毎日のコンディション</p>
+
+        <h2 class="section-title">
+          頑張ることより、切り替えることが難しい。
+        </h2>
+
+        <p class="section-lead">
+          やるべきことは分かっている。それでも、自分の状態が思うようについてこない。そんな日はありませんか。
+        </p>
+
+        <ul class="concern-list">
+          <li>集中したいのに、考えが散らばる</li>
+          <li>忙しさが続くと、ついイライラする</li>
+          <li>気持ちを落ち着けたいのに、力を抜けない</li>
+          <li>ONとOFFを、うまく切り替えられない</li>
+        </ul>
+
+        <p class="intro-message">
+          必要なのは、頑張り続けることではなく、その時々に合った自分へ切り替えることかもしれません。
+        </p>
+      </section>
+
+      <section class="section why-ear">
+        <p class="section-label">なぜ、耳なのか</p>
+
+        <h2 class="section-title">
+          耳は、音を聞くだけの場所ではありません。
+        </h2>
+
+        <p class="section-lead">
+          耳は、東洋医学や耳介療法をはじめ、さまざまな分野で古くから着目されてきた身体の一部です。
+        </p>
+
+        <div class="knowledge-list">
+          <article class="knowledge-card">
+            <div class="knowledge-heading">
+              <span class="knowledge-number">01</span>
+              <h3>全身との関係を考える場所</h3>
+            </div>
+            <p>
+              耳つぼや耳介療法では、耳を全身の縮図のように捉え、身体の各部位に対応する多数のポイントがあると考えられています。
+            </p>
+          </article>
+
+          <article class="knowledge-card">
+            <div class="knowledge-heading">
+              <span class="knowledge-number">02</span>
+              <h3>神経が分布する繊細な場所</h3>
+            </div>
+            <p>
+              耳とその周辺には複数の知覚神経が分布しています。耳介の一部には迷走神経の枝が分布することも知られています。
+            </p>
+          </article>
+
+          <article class="knowledge-card">
+            <div class="knowledge-heading">
+              <span class="knowledge-number">03</span>
+              <h3>日常で触れやすい場所</h3>
+            </div>
+            <p>
+              耳は特別な準備をせず、自分の手で触れられる場所です。短い時間でも行いやすく、セルフケアの対象として知られています。
+            </p>
+          </article>
+        </div>
+
+        <div class="knowledge-note">
+          ※本項は、耳つぼや耳を用いたセルフケアが注目されている一般的な背景を紹介するものです。耳つぼの位置や解釈には諸説があり、特定の効果を保証するものではありません。また、記載内容はVital Ear Plugの疾病に対する効果・効能を示すものではありません。
+        </div>
+      </section>
+
+      <section class="section states">
+        <p class="section-label">耳から始めるセルフケア</p>
+
+        <h2 class="section-title">
+          耳に意識を向けることを、切り替えのきっかけに。
+        </h2>
+
+        <p class="section-lead">
+          集中したいとき、落ち着きたいとき、ONとOFFを切り替えたいとき。その時々の自分に意識を向けるために。
+        </p>
+
+        <div class="state-list">
+          <article class="state-card">
+            <h3>集中したい</h3>
+            <p>
+              考えが散らばりやすいときに、目の前のことへ向かう区切りをつくる。
+            </p>
+          </article>
+
+          <article class="state-card">
+            <h3>落ち着きたい</h3>
+            <p>
+              忙しさで余裕がなくなったときに、いったん自分の状態へ意識を戻す。
+            </p>
+          </article>
+
+          <article class="state-card">
+            <h3>切り替えたい</h3>
+            <p>
+              仕事、休憩、次の予定。必要な状態へ移るための区切りをつくる。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section product">
+        <p class="section-label">Vital Ear Plug</p>
+
+        <h2 class="section-title">
+          耳に装着する、新しいセルフケア。
+        </h2>
+
+        <div class="product-copy">
+          <p>
+            Vital Ear Plugは、Vital PADに用いられている素材技術を、耳に装着できる形へ応用したウェルネスアイテムです。
+          </p>
+
+          <p>
+            左右それぞれの耳に合うサイズを選び、外耳道の奥へ入れず、耳の入り口付近に装着して使用します。
+          </p>
+
+          <p>
+            装着した状態で過ごせるため、集中したい時間にも、力を抜きたい時間にも、自分の生活に合わせて取り入れられます。
+          </p>
+        </div>
+
+        <div class="product-points">
+          <div class="product-point">耳の入り口付近へ装着</div>
+          <div class="product-point">左右別にサイズを選択</div>
+          <div class="product-point">周囲の音に配慮した構造</div>
+          <div class="product-point">電源も充電も不要</div>
+        </div>
+
+        <div class="product-summary">
+          集中、リラックス、ON／OFF。その時々の自分に意識を向けるための、新しい選択です。
+        </div>
+      </section>
+
+      <section class="section needs">
+        <p class="section-label">こんなときに</p>
+
+        <h2 class="section-title">
+          場所ではなく、なりたい状態に合わせて使う。
+        </h2>
+
+        <div class="need-list">
+          <article class="need-card">
+            <h3>目の前のことに集中したい</h3>
+            <p>
+              考えが散らばるときに、自分の状態へ意識を戻し、始めるための区切りをつくりたい方へ。
+            </p>
+          </article>
+
+          <article class="need-card">
+            <h3>イライラから距離を置きたい</h3>
+            <p>
+              気持ちに余裕がなくなったときに、次の行動へ移る前の間をつくりたい方へ。
+            </p>
+          </article>
+
+          <article class="need-card">
+            <h3>ゆったりと過ごしたい</h3>
+            <p>
+              考え事が続くときに、読書や音楽、休憩の時間を自分らしく過ごしたい方へ。
+            </p>
+          </article>
+
+          <article class="need-card">
+            <h3>ONとOFFを切り替えたい</h3>
+            <p>
+              仕事、休憩、次の予定へ移るときに、必要な状態への切り替えを意識したい方へ。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section howto">
+        <p class="section-label">形状と装着方法</p>
+
+        <h2 class="section-title">
+          製品の向きと、耳に収める位置を確認してください。
+        </h2>
+
+        <p class="section-lead">
+          Vital Ear Plugは、一般的な耳栓のように外耳道の奥へ差し込むものではありません。耳の入り口付近に収めて使用します。
+        </p>
+
+        <figure class="wearing-visual">
+          <div class="product-image-card">
+            <img
+              src="https://d41chssnpqdne.cloudfront.net/user_upload_by_module/chat_bot/files/137251442/BkvPplCNKB46Fujs.png?Expires=1791462519&Signature=rN3iEOeIh~fUc0ZQGPPcUMhqpKjyVhG2OovnmFHY7DuUPhxubzWQzTCgzEfvSBuaKq5BM0FUq~WwHOh~BkyCdYRA2Hmhkb71062ITteJk~CsBsJ9L6bgJQ3yFu6WNtBwJqD3FE6E-EGsfOBoMTSvcuWsNK~4ql77wzFclyNFAfxE058fNCe5fn3Ah9dsHzOqH5GxacHgtciSymjyerMPDiMZkEsPyc6VT~BeINKhmkUOqqX1AnXqbZ4-pfojAjth8z7lwkdB2QIC9aAKlLEFo5L9ntkMdCiqC0Rk4XxyzCveuZLQ3hVkrX7XYuYZNVLMFrbWPuArGcJ6tezhMhG9Qg__&Key-Pair-Id=K3USGZIKWMDCSX"
+              alt="Vital Ear Plugの形状と外音取り込み孔"
+              loading="lazy"
+            >
+            <figcaption class="image-description">
+              中央の孔は、周囲の音を取り込むための構造です。孔を塞がない向きで装着します。
+            </figcaption>
+          </div>
+        </figure>
+
+        <div class="wear-position">
+          <strong>装着する位置</strong>
+          <p>
+            耳珠・外耳孔と対輪の間に、製品全体が無理なく収まる位置で装着します。外耳道の奥へ押し込まないでください。
+          </p>
+        </div>
+
+        <div class="step-list">
+          <article class="step">
+            <span class="step-label">STEP 01</span>
+            <h3>左右それぞれのサイズを選ぶ</h3>
+            <p>
+              耳の形や大きさは左右で異なることがあります。片耳ずつ装着感を確認してください。
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-label">STEP 02</span>
+            <h3>耳の入り口付近に収める</h3>
+            <p>
+              強く押し込まず、痛みや圧迫感のない位置へゆっくりと収めます。
+            </p>
+          </article>
+
+          <article class="step">
+            <span class="step-label">STEP 03</span>
+            <h3>孔と装着感を確認する</h3>
+            <p>
+              外音取り込み孔が塞がれていないことと、製品が無理なく安定していることを確認します。
+            </p>
+          </article>
+        </div>
+
+        <div class="warning">
+          <strong>初めて使うときは、短い時間からお試しください。</strong>
+          痛み、強い圧迫感、かゆみ、赤み、腫れなどが生じた場合は、直ちに使用を中止してください。
+        </div>
+      </section>
+
+      <section class="section features">
+        <p class="section-label">素材と構造</p>
+
+        <h2 class="section-title">
+          日常で使うために考えた、素材とつくり。
+        </h2>
+
+        <div class="feature-list">
+          <article class="feature-card">
+            <h3>Vital PADの素材技術</h3>
+            <p>
+              特殊セラミック配合素材を、耳装着型の製品へ応用しています。
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>歯科用シリコン樹脂</h3>
+            <p>
+              耳への収まりや扱いやすさを考慮した素材を組み合わせています。
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>歯科技工の成形技術</h3>
+            <p>
+              細かな形を扱う技術を生かし、製品仕様に基づいて仕上げています。
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>外音取り込み構造</h3>
+            <p>
+              貫通孔を設け、周囲の音や人の声を取り込めるよう配慮しています。
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>左右別のサイズ選択</h3>
+            <p>
+              左右それぞれの耳で、装着感を確認してサイズを選びます。
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <h3>電源・充電不要</h3>
+            <p>
+              電池、コード、充電器を使わないシンプルな構造です。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section care">
+        <p class="section-label">お手入れ</p>
+
+        <h2 class="section-title">
+          清潔に保ち、繰り返し使う。
+        </h2>
+
+        <ol class="care-list">
+          <li>中性洗剤を使って、やさしく洗います。</li>
+          <li>洗剤が残らないよう、十分にすすぎます。</li>
+          <li>清潔な布で水分を拭き取り、よく乾かします。</li>
+          <li>直射日光と高温多湿を避けて保管します。</li>
+        </ol>
+
+        <p class="small-note">
+          ※塩素系漂白剤や酸性洗剤は使用しないでください。詳細は製品付属の取扱説明書をご確認ください。
+        </p>
+      </section>
+
+      <section class="closing">
+        <p class="closing-label">FOR YOUR EVERYDAY CONDITION</p>
+
+        <h2>
+          自分の状態を知り、自分らしく切り替える。
+        </h2>
+
+        <p class="closing-text">
+          集中したいときと、力を抜きたいとき。必要なコンディションは、その瞬間ごとに変わります。
+        </p>
+
+        <p class="closing-text">
+          Vital Ear Plugは、その時々の自分に合わせて取り入れる耳装着型のウェルネスアイテムです。
+        </p>
+
+        <p class="closing-message">
+          集中したい。落ち着きたい。切り替えたい。なりたい状態へのきっかけを、耳から。
+        </p>
+      </section>
+
+      <section class="disclaimer">
+        <h2>使用上のご案内</h2>
+
+        <p>
+          本製品は、疾病の診断、治療または予防を目的としたものではありません。使用感や装着感には個人差があります。
+        </p>
+
+        <p>
+          耳に傷、炎症、湿疹などの異常がある場合は使用しないでください。痛み、かゆみ、赤み、腫れ、強い圧迫感などが生じた場合は、直ちに使用を中止してください。
+        </p>
+
+        <p>
+          症状が続く場合や使用に不安がある場合は、医師等へご相談ください。使用方法とお手入れ方法は、製品付属の取扱説明書を優先してください。
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-info">
+        <div>監修：水元医院 院長 平瀬悦子 医師</div>
+        <div>販売元：株式会社龍洗</div>
+        <div>〒125-0032 東京都葛飾区金町6-4-2-1103</div>
+        <div>制作：Produced by MDA</div>
+      </div>
+
+      <p class="copyright">
+        © 2026 Comprehensive Sleep Knowledge Project
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
