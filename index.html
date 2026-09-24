@@ -793,6 +793,79 @@
       }
     }
   </style>
+
+  <!-- 自動最新版取得：公開中の同じHTMLを毎回確認し、更新時は自動反映 -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <script>
+    (() => {
+      "use strict";
+
+      const CHECK_INTERVAL_MS = 60 * 1000;
+      const sourceUrl = new URL(window.location.href);
+      sourceUrl.search = "";
+      sourceUrl.hash = "";
+      const storageKey = `latest-html:${sourceUrl.pathname}`;
+      let checking = false;
+
+      async function digest(text) {
+        const data = new TextEncoder().encode(text);
+        const hash = await crypto.subtle.digest("SHA-256", data);
+        return Array.from(new Uint8Array(hash))
+          .map(byte => byte.toString(16).padStart(2, "0"))
+          .join("");
+      }
+
+      async function fetchLatestHtml() {
+        if (checking || document.visibilityState === "hidden") return;
+        checking = true;
+
+        try {
+          const requestUrl = new URL(sourceUrl.href);
+          requestUrl.searchParams.set("_latest", Date.now().toString());
+
+          const response = await fetch(requestUrl.href, {
+            method: "GET",
+            cache: "no-store",
+            headers: {
+              "Cache-Control": "no-cache, no-store, must-revalidate",
+              "Pragma": "no-cache"
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error(`最新版を取得できませんでした: ${response.status}`);
+          }
+
+          const latestHtml = await response.text();
+          if (!latestHtml.includes("<!DOCTYPE html") || !latestHtml.includes("</html>")) {
+            throw new Error("取得したデータがHTMLではありません。");
+          }
+
+          const latestHash = await digest(latestHtml);
+          const displayedHash = sessionStorage.getItem(storageKey);
+
+          if (displayedHash === latestHash) return;
+
+          sessionStorage.setItem(storageKey, latestHash);
+          document.open();
+          document.write(latestHtml);
+          document.close();
+        } catch (error) {
+          console.error("自動更新の確認に失敗しました。現在のページを表示します。", error);
+        } finally {
+          checking = false;
+        }
+      }
+
+      fetchLatestHtml();
+      window.setInterval(fetchLatestHtml, CHECK_INTERVAL_MS);
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") fetchLatestHtml();
+      });
+    })();
+  </script>
 </head>
 
 <body>
@@ -833,7 +906,7 @@
 
         <figure class="hero-photo">
           <img
-            src="https://i.imgur.com/KLasTME.png"
+            src="https://i.imgur.com/9tMX8bl.png"
             alt="Vital Ear Plugを耳に装着した女性"
             fetchpriority="high"
           >
@@ -1034,7 +1107,7 @@
         <figure class="wearing-visual">
           <div class="product-image-card">
             <img
-              src="https://d41chssnpqdne.cloudfront.net/user_upload_by_module/chat_bot/files/137251442/BkvPplCNKB46Fujs.png?Expires=1791462519&Signature=rN3iEOeIh~fUc0ZQGPPcUMhqpKjyVhG2OovnmFHY7DuUPhxubzWQzTCgzEfvSBuaKq5BM0FUq~WwHOh~BkyCdYRA2Hmhkb71062ITteJk~CsBsJ9L6bgJQ3yFu6WNtBwJqD3FE6E-EGsfOBoMTSvcuWsNK~4ql77wzFclyNFAfxE058fNCe5fn3Ah9dsHzOqH5GxacHgtciSymjyerMPDiMZkEsPyc6VT~BeINKhmkUOqqX1AnXqbZ4-pfojAjth8z7lwkdB2QIC9aAKlLEFo5L9ntkMdCiqC0Rk4XxyzCveuZLQ3hVkrX7XYuYZNVLMFrbWPuArGcJ6tezhMhG9Qg__&Key-Pair-Id=K3USGZIKWMDCSX"
+              src="https://i.imgur.com/4LvKXzo.png"
               alt="Vital Ear Plugの形状と外音取り込み孔"
               loading="lazy"
             >
