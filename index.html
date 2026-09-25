@@ -193,6 +193,20 @@
       padding: 52px 22px 34px;
     }
 
+    .hero-company-copy {
+      display: inline-flex;
+      margin: 0 0 18px;
+      padding: 7px 13px;
+      border: 1px solid rgba(221, 201, 153, 0.55);
+      border-radius: 999px;
+      color: #f0dba8;
+      background: rgba(255, 255, 255, 0.06);
+      font-size: clamp(0.68rem, 2.9vw, 0.78rem);
+      font-weight: 700;
+      line-height: 1.55;
+      letter-spacing: 0.055em;
+    }
+
     .hero-kicker {
       margin-bottom: 17px;
       color: #ddc999;
@@ -242,11 +256,6 @@
       font-size: 0.64rem;
       white-space: nowrap;
     }
-
-    /*
-      写真は絶対配置しない。
-      width 100%・height autoで元画像の比率を維持する。
-    */
 
     .hero-photo {
       position: relative;
@@ -673,7 +682,7 @@
       top: 13px;
     }
 
-    /* Closing — left aligned, no forced line breaks */
+    /* Closing */
 
     .closing {
       padding: 76px 22px;
@@ -798,6 +807,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+
   <script>
     (() => {
       "use strict";
@@ -812,6 +822,7 @@
       async function digest(text) {
         const data = new TextEncoder().encode(text);
         const hash = await crypto.subtle.digest("SHA-256", data);
+
         return Array.from(new Uint8Array(hash))
           .map(byte => byte.toString(16).padStart(2, "0"))
           .join("");
@@ -819,6 +830,7 @@
 
       async function fetchLatestHtml() {
         if (checking || document.visibilityState === "hidden") return;
+
         checking = true;
 
         try {
@@ -835,11 +847,17 @@
           });
 
           if (!response.ok) {
-            throw new Error(`最新版を取得できませんでした: ${response.status}`);
+            throw new Error(
+              `最新版を取得できませんでした: ${response.status}`
+            );
           }
 
           const latestHtml = await response.text();
-          if (!latestHtml.includes("<!DOCTYPE html") || !latestHtml.includes("</html>")) {
+
+          if (
+            !latestHtml.includes("<!DOCTYPE html") ||
+            !latestHtml.includes("</html>")
+          ) {
             throw new Error("取得したデータがHTMLではありません。");
           }
 
@@ -853,7 +871,10 @@
           document.write(latestHtml);
           document.close();
         } catch (error) {
-          console.error("自動更新の確認に失敗しました。現在のページを表示します。", error);
+          console.error(
+            "自動更新の確認に失敗しました。現在のページを表示します。",
+            error
+          );
         } finally {
           checking = false;
         }
@@ -861,8 +882,11 @@
 
       fetchLatestHtml();
       window.setInterval(fetchLatestHtml, CHECK_INTERVAL_MS);
+
       document.addEventListener("visibilitychange", () => {
-        if (document.visibilityState === "visible") fetchLatestHtml();
+        if (document.visibilityState === "visible") {
+          fetchLatestHtml();
+        }
       });
     })();
   </script>
@@ -880,7 +904,13 @@
     <main>
       <section class="hero">
         <div class="hero-copy">
-          <p class="hero-kicker">CONDITIONING FROM THE EARS</p>
+          <p class="hero-company-copy">
+            株式会社龍洗がお届けする、耳から始める新しいセルフケア。
+          </p>
+
+          <p class="hero-kicker">
+            CONDITIONING FROM THE EARS
+          </p>
 
           <h1>
             <span>集中したい。</span>
@@ -956,6 +986,7 @@
               <span class="knowledge-number">01</span>
               <h3>全身との関係を考える場所</h3>
             </div>
+
             <p>
               耳つぼや耳介療法では、耳を全身の縮図のように捉え、身体の各部位に対応する多数のポイントがあると考えられています。
             </p>
@@ -966,6 +997,7 @@
               <span class="knowledge-number">02</span>
               <h3>神経が分布する繊細な場所</h3>
             </div>
+
             <p>
               耳とその周辺には複数の知覚神経が分布しています。耳介の一部には迷走神経の枝が分布することも知られています。
             </p>
@@ -976,6 +1008,7 @@
               <span class="knowledge-number">03</span>
               <h3>日常で触れやすい場所</h3>
             </div>
+
             <p>
               耳は特別な準備をせず、自分の手で触れられる場所です。短い時間でも行いやすく、セルフケアの対象として知られています。
             </p>
@@ -1044,10 +1077,18 @@
         </div>
 
         <div class="product-points">
-          <div class="product-point">耳の入り口付近へ装着</div>
-          <div class="product-point">左右別にサイズを選択</div>
-          <div class="product-point">周囲の音に配慮した構造</div>
-          <div class="product-point">電源も充電も不要</div>
+          <div class="product-point">
+            耳の入り口付近へ装着
+          </div>
+          <div class="product-point">
+            左右別にサイズを選択
+          </div>
+          <div class="product-point">
+            周囲の音に配慮した構造
+          </div>
+          <div class="product-point">
+            電源も充電も不要
+          </div>
         </div>
 
         <div class="product-summary">
@@ -1111,6 +1152,7 @@
               alt="Vital Ear Plugの形状と外音取り込み孔"
               loading="lazy"
             >
+
             <figcaption class="image-description">
               中央の孔は、周囲の音を取り込むための構造です。孔を塞がない向きで装着します。
             </figcaption>
@@ -1151,7 +1193,9 @@
         </div>
 
         <div class="warning">
-          <strong>初めて使うときは、短い時間からお試しください。</strong>
+          <strong>
+            初めて使うときは、短い時間からお試しください。
+          </strong>
           痛み、強い圧迫感、かゆみ、赤み、腫れなどが生じた場合は、直ちに使用を中止してください。
         </div>
       </section>
@@ -1228,7 +1272,9 @@
       </section>
 
       <section class="closing">
-        <p class="closing-label">FOR YOUR EVERYDAY CONDITION</p>
+        <p class="closing-label">
+          FOR YOUR EVERYDAY CONDITION
+        </p>
 
         <h2>
           自分の状態を知り、自分らしく切り替える。
@@ -1268,7 +1314,7 @@
       <div class="footer-info">
         <div>監修：水元医院 院長 平瀬悦子 医師</div>
         <div>販売元：株式会社龍洗</div>
-        <div>〒125-0032 東京都葛飾区金町6-4-2-1103</div>
+        <div>〒125-0032 東京都葛飾区水元４丁目２２−６</div>
         <div>制作：Produced by MDA</div>
       </div>
 
